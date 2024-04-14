@@ -3,6 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 
 let selectedDate = null;
 const startButton = document.querySelector('button[data-start');
+startButton.disabled = true;
 
 flatpickr('input#datetime-picker', {
   enableTime: true,
