@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import { Notify } from 'notiflix';
 
 let selectedDate = null;
 const startButton = document.querySelector('button[data-start');
@@ -14,7 +15,7 @@ flatpickr('input#datetime-picker', {
     selectedDate = selectedDates[0];
     if (selectedDate < new Date()) {
       startButton.disabled = true;
-      alert('Wybierz późniejszą datę');
+      Notify.failure('Wybierz późniejszą datę');
     } else {
       startButton.disabled = false;
     }
